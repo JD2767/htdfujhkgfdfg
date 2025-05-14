@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JD সকল পরিবহন | Transport Services in Bangladesh</title>
+    <meta name="description" content="Find all Bangladeshi transport services – ride sharing, train, bus, flights, launches and more. এক ক্লিকে পরিবহনের সকল তথ্য।">
+    <!-- Open Graph Tags -->
+    <meta property="og:title" content="JD সকল পরিবহন | Transport Services in Bangladesh">
+    <meta property="og:description" content="Find all Bangladeshi transport services – ride sharing, train, bus, flights, launches and more.">
+    <meta property="og:image" content="https://jd-transport.com/og-image.jpg">
+    <meta property="og:url" content="https://jd-transport.com">
+    <meta property="og:type" content="website">
+    <!-- Twitter Card Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="JD সকল পরিবহন | Transport Services in Bangladesh">
+    <meta name="twitter:description" content="Find all Bangladeshi transport services – ride sharing, train, bus, flights, launches and more.">
+    <meta name="twitter:image" content="https://jd-transport.com/og-image.jpg">
+    <!-- Google Analytics Placeholder -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-XXXXXXXXXX');
+    </script>
+    <!-- Google Search Console Verification -->
+    <meta name="google-site-verification" content="YOUR_VERIFICATION_CODE">
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Alpine.js -->
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <!-- Schema Markup -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "name": "JD সকল পরিবহন",
+        "description": "A comprehensive directory of all transportation services in Bangladesh.",
+        "url": "https://jd-transport.com",
+        "address": {
+            "@type": "PostalAddress",
+            "addressCountry": "BD"
+        }
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "What is JD সকল পরিবহন?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "JD সকল পরিবহন is a bilingual platform listing all transportation services in Bangladesh, including ride-sharing, buses, trains, and international air ticketing platforms."
+                }
+            }
+        ]
+    }
+    </script>
+    <style>
+        [x-cloak] { display: none; }
+        .sticky { position: sticky; top: 0; z-index: 50; }
+    </style>
+</head>
+<body x-data="{
+    darkMode: localStorage.getItem('darkMode') === 'true',
+    lang: localStorage.getItem('lang') || 'en',
+    searchQuery: '',
+    selectedCategory: 'All',
+    transports: [
+        {
+            id: 1,
+            name_en: 'Pathao',
+            name_bn: 'পাঠাও',
+            logo: 'https://via.placeholder.com/100',
+            website: 'https://www.pathao.com',
+            category_en: 'Ride-Sharing',
+            category_bn: 'রাইড শেয়ারিং',
+            desc_en: 'Bike & car ride-sharing in major cities',
+            desc_bn: 'ঢাকা ও বড় শহরে বাইক ও কার রাইড শেয়ারিং',
+            sponsored: true,
+            featured: true
+        },
+        {
+            id: 2,
+            name_en: 'Uber',
+            name_bn: 'উবার',
+            logo: 'https://via.placeholder.com/100',
+            website: 'https://www.uber.com/bd/en',
+            category_en: 'Ride-Sharing',
+            category_bn: 'রাইড শেয়ারিং',
+            desc_en: 'International ride-sharing in Dhaka',
+            desc_bn: 'আন্তর্জাতিক রাইড শেয়ারিং সার্ভিস (ঢাকায়)',
+            sponsored: false,
+            featured: false
+        },
+        {
+            id: 3,
+            name_en: 'Shohoz',
+            name_bn: 'সহজ',
+            logo: 'https://via.placeholder.com/100',
+            website: 'https://www.shohoz.com',
+            category_en: 'Bus/Train/Launch',
+            category_bn: 'বাস/লঞ্চ/ট্রেন',
+            desc_en: 'Ticket booking for buses, launches, and trains',
+            desc_bn: 'বাস, লঞ্চ ও ট্রেনের টিকিট বুকিং',
+            sponsored: false,
+            featured: true
+        },
+        {
+            id: 4,
+            name_en: 'Amybd',
+            name_bn: 'এমিবিডি',
+            logo: 'https://via.placeholder.com/100',
+            website: 'https://www.amybd.com',
+            category_en: 'Flight',
+            category_bn: 'ফ্লাইট',
+            desc_en: 'Online platform for international and domestic air tickets',
+            desc_bn: 'আন্তর্জাতিক এবং দেশীয় বিমান টিকিটের জন্য অনলাইন প্ল্যাটফর্ম',
+            sponsored: false,
+            featured: true
+        },
+        {
+            id: 5,
+            name_en: 'GoZayaan',
+            name_bn: 'গোজায়ান',
+            logo: 'https://via.placeholder.com/100',
+            website: 'https://www.gozayaan.com',
+            category_en: 'Flight',
+            category_bn: 'ফ্লাইট',
+            desc_en: 'Book international flights with competitive prices',
+            desc_bn: 'প্রতিযোগিতামূলক মূল্যে আন্তর্জাতিক ফ্লাইট বুক করুন',
+            sponsored: true,
+            featured: false
+        }
+    ],
+    categories: ['All', 'Ride-Sharing', 'Bus/Train/Launch', 'Govt', 'Train', 'Flight', 'Launch'],
+    adminLoggedIn: false,
+    newTransport: { name_en: '', name_bn: '', logo: '', website: '', category_en: '', category_bn: '', desc_en: '', desc_bn: '' },
+    savedTransports: JSON.parse(localStorage.getItem('savedTransports')) || [],
+    compareTransports: [],
+    showCompareModal: false
+}" x-init="darkMode ? document.documentElement.classList.add('dark') : document.documentElement.classList.remove('dark');
+localStorage.setItem('darkMode', darkMode);
+localStorage.setItem('lang', lang);"
+    class="bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100 min-h-screen">
+
+    <!-- Header -->
+    <header class="bg-blue-600 dark:bg-blue-800 text-white sticky shadow">
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <h1 class="text-2xl font-bold">JD সকল পরিবহন</h1>
+            <nav class="flex items-center space-x-4">
+                <button @click="lang = lang === 'en' ? 'bn' : 'en'; localStorage.setItem('lang', lang)" class="flex items-center">
+                    <span x-text="lang === 'en' ? '🇧🇩 বাংলা' : '🇬🇧 English'"></span>
+                </button>
+                <button @click="darkMode = !darkMode; document.documentElement.classList.toggle('dark'); localStorage.setItem('darkMode', darkMode)" class="flex items-center">
+                    <span x-text="darkMode ? '☀️ Light' : '🌙 Dark'"></span>
+                </button>
+                <a href="#admin" x-show="!adminLoggedIn" class="text-white">Admin Login</a>
+                <button x-show="adminLoggedIn" @click="adminLoggedIn = false" class="text-white">Logout</button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Banner -->
+    <section class="bg-blue-500 dark:bg-blue-700 text-white py-12">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-4xl font-bold mb-4" x-text="lang === 'en' ? 'Welcome to JD সকল পরিবহন' : 'JD সকল পরিবহনে স্বাগতম'"></h2>
+            <p class="text-lg" x-text="lang === 'en' ? 'Your one-stop hub for all transportation services and international air ticketing in Bangladesh.' : 'বাংলাদেশের সকল পরিবহন সেবা এবং আন্তর্জাতিক বিমান টিকিটের জন্য একটি কেন্দ্রীয় তথ্যভাণ্ডার।'"></p>
+        </div>
+    </section>
+
+    <!-- AdSense Top Banner Placeholder -->
+    <div class="container mx-auto px-4 py-4 text-center">
+        <div class="bg-gray-200 dark:bg-gray-700 h-32 flex items-center justify-center">AdSense Banner Placeholder</div>
+    </div>
+
+    <!-- Search and Filters -->
+    <section class="container mx-auto px-4 py-8">
+        <div class="flex flex-col md:flex-row gap-4 mb-8">
+            <input type="text" x-model="searchQuery" :placeholder="lang === 'en' ? 'Search Transport' : 'পরিবহন খুঁজুন'" class="border p-2 rounded w-full md:w-1/2">
+            <select x-model="selectedCategory" class="border p-2 rounded">
+                <template x-for="category in categories" :key="category">
+                    <option :value="category" x-text="category"></option>
+                </template>
+            </select>
+            <button @click="showCompareModal = true" class="bg-blue-600 text-white px-4 py-2 rounded" x-text="lang === 'en' ? 'Compare (' + compareTransports.length + ')' : 'তুলনা (' + compareTransports.length + ')'"></button>
+        </div>
+
+        <!-- Featured Transport -->
+        <div class="mb-8">
+            <h3 class="text-2xl font-bold mb-4" x-text="lang === 'en' ? 'Featured Services' : 'বৈশিষ্ট্যযুক্ত সেবা'"></h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <template x-for="transport in transports.filter(t => t.featured && (selectedCategory === 'All' || t.category_en === selectedCategory) && (t.name_en.toLowerCase().includes(searchQuery.toLowerCase()) || t.name_bn.includes(searchQuery)))" :key="transport.id">
+                    <div class="bg-white dark:bg-gray-800 p-4 rounded shadow relative">
+                        <span x-show="transport.sponsored" class="absolute top-2 right-2 bg-yellow-400 text-black px-2 py-1 rounded text-sm">Sponsored</span>
+                        <img :src="transport.logo" alt="Logo" class="w-16 h-16 mb-4">
+                        <h4 class="text-xl font-semibold" x-text="lang === 'en' ? transport.name_en : transport.name_bn"></h4>
+                        <p class="text-sm text-gray-600 dark:text-gray-400" x-text="lang === 'en' ? transport.category_en : transport.category_bn"></p>
+                        <p class="mt-2" x-text="lang === 'en' ? transport.desc_en : transport.desc_bn"></p>
+                        <div class="mt-4 flex gap-2">
+                            <a :href="transport.website" target="_blank" class="bg-blue-600 text-white px-4 py-2 rounded" x-text="lang === 'en' ? 'Visit Website' : 'ওয়েবসাইট দেখুন'"></a>
+                            <button @click="savedTransports.includes(transport.id) ? savedTransports = savedTransports.filter(id => id !== transport.id) : savedTransports.push(transport.id); localStorage.setItem('savedTransports', JSON.stringify(savedTransports))" class="bg-green-600 text-white px-4 py-2 rounded" x-text="savedTransports.includes(transport.id) ? (lang === 'en' ? 'Saved' : 'সংরক্ষিত') : (lang === 'en' ? 'Save' : 'সংরক্ষণ')"></button>
+                            <button @click="compareTransports.includes(transport.id) ? compareTransports = compareTransports.filter(id => id !== transport.id) : compareTransports.push(transport.id)" class="bg-purple-600 text-white px-4 py-2 rounded" x-text="compareTransports.includes(transport.id) ? (lang === 'en' ? 'Remove from Compare' : 'তুলনা থেকে সরান') : (lang === 'en' ? 'Add to Compare' : 'তুলনায় যোগ করুন')"></button>
+                        </div>
+                        <!-- AdSense Card Placeholder -->
+                        <div class="mt-4 bg-gray-200 dark:bg-gray-700 h-16 flex items-center justify-center text-sm">AdSense Card Ad</div>
+                    </div>
+                </template>
+            </div>
+        </div>
+
+        <!-- International Air Ticketing Platforms -->
+        <div class="mb-8">
+            <h3 class="text-2xl font-bold mb-4" x-text="lang === 'en' ? 'International Air Ticketing Platforms' : 'আন্তর্জাতিক বিমান টিকিট প্ল্যাটফর্ম'"></h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <template x-for="transport in transports.filter(t => t.category_en === 'Flight' && (t.name_en.toLowerCase().includes(searchQuery.toLowerCase()) || t.name_bn.includes(searchQuery)))" :key="transport.id">
+                    <div class="bg-white dark:bg-gray-800 p-4 rounded shadow relative">
+                        <span x-show="transport.sponsored" class="absolute top-2 right-2 bg-yellow-400 text-black px-2 py-1 rounded text-sm">Sponsored</span>
+                        <img :src="transport.logo" alt="Logo" class="w-16 h-16 mb-4">
+                        <h4 class="text-xl font-semibold" x-text="lang === 'en' ? transport.name_en : transport.name_bn"></h4>
+                        <p class="text-sm text-gray-600 dark:text-gray-400" x-text="lang === 'en' ? transport.category_en : transport.category_bn"></p>
+                        <p class="mt-2" x-text="lang === 'en' ? transport.desc_en : transport.desc_bn"></p>
+                        <div class="mt-4 flex gap-2">
+                            <a :href="transport.website" target="_blank" class="bg-blue-600 text-white px-4 py-2 rounded" x-text="lang === 'en' ? 'Buy Tickets' : 'টিকিট কিনুন'"></a>
+                            <button @click="savedTransports.includes(transport.id) ? savedTransports = savedTransports.filter(id => id !== transport.id) : savedTransports.push(transport.id); localStorage.setItem('savedTransports', JSON.stringify(savedTransports))" class="bg-green-600 text-white px-4 py-2 rounded" x-text="savedTransports.includes(transport.id) ? (lang === 'en' ? 'Saved' : 'সংরক্ষিত') : (lang === 'en' ? 'Save' : 'সংরক্ষণ')"></button>
+                            <button @click="compareTransports.includes(transport.id) ? compareTransports = compareTransports.filter(id => id !== transport.id) : compareTransports.push(transport.id)" class="bg-purple-600 text-white px-4 py-2 rounded" x-text="compareTransports.includes(transport.id) ? (lang === 'en' ? 'Remove from Compare' : 'তুলনা থেকে সরান') : (lang === 'en' ? 'Add to Compare' : 'তুলনায় যোগ করুন')"></button>
+                        </div>
+                    </div>
+                </template>
+            </div>
+        </div>
+
+        <!-- All Transports -->
+        <div>
+            <h3 class="text-2xl font-bold mb-4" x-text="lang === 'en' ? 'All Transport Services' : 'সকল পরিবহন সেবা'"></h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <template x-for="transport in transports.filter(t => (selectedCategory === 'All' || t.category_en === selectedCategory) && (t.name_en.toLowerCase().includes(searchQuery.toLowerCase()) || t.name_bn.includes(searchQuery)))" :key="transport.id">
+                    <div class="bg-white dark:bg-gray-800 p-4 rounded shadow relative">
+                        <span x-show="transport.sponsored" class="absolute top-2 right-2 bg-yellow-400 text-black px-2 py-1 rounded text-sm">Sponsored</span>
+                        <img :src="transport.logo" alt="Logo" class="w-16 h-16 mb-4">
+                        <h4 class="text-xl font-semibold" x-text="lang === 'en' ? transport.name_en : transport.name_bn"></h4>
+                        <p class="text-sm text-gray-600 dark:text-gray-400" x-text="lang === 'en' ? transport.category_en : transport.category_bn"></p>
+                        <p class="mt-2" x-text="lang === 'en' ? transport.desc_en : transport.desc_bn"></p>
+                        <div class="mt-4 flex gap-2">
+                            <a :href="transport.website" target="_blank" class="bg-blue-600 text-white px-4 py-2 rounded" x-text="lang === 'en' ? 'Visit Website' : 'ওয়েবসাইট দেখুন'"></a>
+                            <button @click="savedTransports.includes(transport.id) ? savedTransports = savedTransports.filter(id => id !== transport.id) : savedTransports.push(transport.id); localStorage.setItem('savedTransports', JSON.stringify(savedTransports))" class="bg-green-600 text-white px-4 py-2 rounded" x-text="savedTransports.includes(transport.id) ? (lang === 'en' ? 'Saved' : 'সংরক্ষিত') : (lang === 'en' ? 'Save' : 'সংরক্ষণ')"></button>
+                            <button @click="compareTransports.includes(transport.id) ? compareTransports = compareTransports.filter(id => id !== transport.id) : compareTransports.push(transport.id)" class="bg-purple-600 text-white px-4 py-2 rounded" x-text="compareTransports.includes(transport.id) ? (lang === 'en' ? 'Remove from Compare' : 'তুলনা থেকে সরান') : (lang === 'en' ? 'Add to Compare' : 'তুলনায় যোগ করুন')"></button>
+                        </div>
+                    </div>
+                </template>
+            </div>
+        </div>
+    </section>
+
+    <!-- Compare Modal -->
+    <div x-show="showCompareModal" x-cloak class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center" @click.self="showCompareModal = false">
+        <div class="bg-white dark:bg-gray-800 p-6 rounded shadow max-w-4xl w-full overflow-x-auto">
+            <h3 class="text-2xl font-bold mb-4" x-text="lang === 'en' ? 'Compare Transport Services' : 'পরিবহন সেবা তুলনা'"></h3>
+            <table class="w-full text-left">
+                <thead>
+                    <tr class="border-b">
+                        <th class="p-2" x-text="lang === 'en' ? 'Name' : 'নাম'"></th>
+                        <th class="p-2" x-text="lang === 'en' ? 'Category' : 'ক্যাটাগরি'"></th>
+                        <th class="p-2" x-text="lang === 'en' ? 'Description' : 'বিবরণ'"></th>
+                        <th class="p-2" x-text="lang === 'en' ? 'Actions' : 'ক্রিয়া'"></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <template x-for="transport in transports.filter(t => compareTransports.includes(t.id))" :key="transport.id">
+                        <tr class="border-b">
+                            <td class="p-2" x-text="lang === 'en' ? transport.name_en : transport.name_bn"></td>
+                            <td class="p-2" x-text="lang === 'en' ? transport.category_en : transport.category_bn"></td>
+                            <td class="p-2" x-text="lang === 'en' ? transport.desc_en : transport.desc_bn"></td>
+                            <td class="p-2">
+                                <a :href="transport.website" target="_blank" class="bg-blue-600 text-white px-2 py-1 rounded" x-text="lang === 'en' ? 'Visit' : 'দেখুন'"></a>
+                            </td>
+                        </tr>
+                    </template>
+                </tbody>
+            </table>
+            <button @click="showCompareModal = false" class="mt-4 bg-red-600 text-white px-4 py-2 rounded" x-text="lang === 'en' ? 'Close' : 'বন্ধ'"></button>
+        </div>
+    </div>
+
+    <!-- Sidebar AdSense Placeholder -->
+    <aside class="container mx-auto px-4 py-4">
+        <div class="bg-gray-200 dark:bg-gray-700 h-64 flex items-center justify-center">AdSense Sidebar Ad</div>
+    </aside>
+
+    <!-- Testimonials -->
+    <section class="container mx-auto px-4 py-8">
+        <h3 class="text-2xl font-bold mb-4" x-text="lang === 'en' ? 'Testimonials' : 'প্রশংসাপত্র'"></h3>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div class="bg-white dark:bg-gray-800 p-4 rounded shadow">
+                <p x-text="lang === 'en' ? 'Great platform to find transport options!' : 'পরিবহন বিকল্প খুঁজে পাওয়ার জন্য দুর্দান্ত প্ল্যাটফর্ম!'"></p>
+                <p class="mt-2 font-semibold">- John Doe</p>
+            </div>
+            <div class="bg-white dark:bg-gray-800 p-4 rounded shadow">
+                <p x-text="lang === 'en' ? 'Very user-friendly and informative.' : 'খুবই ব্যবহারকারী-বান্ধব এবং তথ্যপূর্ণ।'"></p>
+                <p class="mt-2 font-semibold">- Jane Smith</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio -->
+    <section class="container mx-auto px-4 py-8">
+        <h3 class="text-2xl font-bold mb-4" x-text="lang === 'en' ? 'Our Projects' : 'আমাদের প্রকল্প'"></h3>
+        <div class="flex flex-wrap gap-6">
+            <img src="https://via.placeholder.com/100" alt="Pathao" class="w-24 h-24">
+            <img src="https://via.placeholder.com/100" alt="Shohoz" class="w-24 h-24">
+            <img src="https://via.placeholder.com/100" alt="Uber" class="w-24 h-24">
+        </div>
+    </section>
+
+    <!-- Contact Form -->
+    <section class="container mx-auto px-4 py-8">
+        <h3 class="text-2xl font-bold mb-4" x-text="lang === 'en' ? 'Contact Us' : 'যোগাযোগ করুন'"></h3>
+        <div class="bg-white dark:bg-gray-800 p-6 rounded shadow">
+            <div class="mb-4">
+                <label class="block mb-2" x-text="lang === 'en' ? 'Email' : 'ইমেইল'"></label>
+                <input type="email" class="border p-2 w-full rounded" required>
+            </div>
+            <div class="mb-4">
+                <label class="block mb-2" x-text="lang === 'en' ? 'Message' : 'বার্তা'"></label>
+                <textarea class="border p-2 w-full rounded" rows="4" required></textarea>
+            </div>
+            <button type="button" class="bg-blue-600 text-white px-4 py-2 rounded" x-text="lang === 'en' ? 'Submit' : 'জমা দিন'"></button>
+        </div>
+    </section>
+
+    <!-- Newsletter Signup -->
+    <section class="container mx-auto px-4 py-8">
+        <h3 class="text-2xl font-bold mb-4" x-text="lang === 'en' ? 'Subscribe to Our Newsletter' : 'আমাদের নিউজলেটারে সাবস্ক্রাইব করুন'"></h3>
+        <div class="flex gap-4">
+            <input type="email" :placeholder="lang === 'en' ? 'Your Email' : 'আপনার ইমেইল'" class="border p-2 rounded w-full md:w-1/2">
+            <button class="bg-blue-600 text-white px-4 py-2 rounded" x-text="lang === 'en' ? 'Subscribe' : 'সাবস্ক্রাইব'"></button>
+        </div>
+    </section>
+
+    <!-- Admin Panel -->
+    <section id="admin" class="container mx-auto px-4 py-8" x-show="adminLoggedIn" x-cloak>
+        <h3 class="text-2xl font-bold mb-4" x-text="lang === 'en' ? 'Admin Panel' : 'প্রশাসন প্যানেল'"></h3>
+        <div class="bg-white dark:bg-gray-800 p-6 rounded shadow">
+            <h4 class="text-xl font-semibold mb-4" x-text="lang === 'en' ? 'Add New Transport' : 'নতুন পরিবহন যোগ করুন'"></h4>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <input x-model="newTransport.name_en" type="text" placeholder="Name (English)" class="border p-2 rounded">
+                <input x-model="newTransport.name_bn" type="text" placeholder="নাম (বাংলা)" class="border p-2 rounded">
+                <input x-model="newTransport.logo" type="text" placeholder="Logo URL" class="border p-2 rounded">
+                <input x-model="newTransport.website" type="text" placeholder="Website URL" class="border p-2 rounded">
+                <input x-model="newTransport.category_en" type="text" placeholder="Category (English)" class="border p-2 rounded">
+                <input x-model="newTransport.category_bn" type="text" placeholder="ক্যাটাগরি (বাংলা)" class="border p-2 rounded">
+                <textarea x-model="newTransport.desc_en" placeholder="Description (English)" class="border p-2 rounded"></textarea>
+                <textarea x-model="newTransport.desc_bn" placeholder="বিবরণ (বাংলা)" class="border p-2 rounded"></textarea>
+            </div>
+            <button @click="transports.push({...newTransport, id: transports.length + 1, sponsored: false, featured: false}); newTransport = { name_en: '', name_bn: '', logo: '', website: '', category_en: '', category_bn: '', desc_en: '', desc_bn: '' }" class="mt-4 bg-blue-600 text-white px-4 py-2 rounded" x-text="lang === 'en' ? 'Add Transport' : 'পরিবহন যোগ করুন'"></button>
+        </div>
+        <div class="mt-8">
+            <h4 class="text-xl font-semibold mb-4" x-text="lang === 'en' ? 'Manage Transports' : 'পরিবহন পরিচালনা'"></h4>
+            <div class="grid grid-cols-1 gap-4">
+                <template x-for="transport in transports" :key="transport.id">
+                    <div class="bg-white dark:bg-gray-800 p-4 rounded shadow flex justify-between items-center">
+                        <span x-text="lang === 'en' ? transport.name_en : transport.name_bn"></span>
+                        <div class="flex gap-2">
+                            <button @click="transport.featured = !transport.featured" class="bg-yellow-400 text-black px-2 py-1 rounded" x-text="transport.featured ? (lang === 'en' ? 'Unfeature' : 'বৈশিষ্ট্য সরান') : (lang === 'en' ? 'Feature' : 'বৈশিষ্ট্য যোগ')"></button>
+                            <button @click="transport.sponsored = !transport.sponsored" class="bg-green-600 text-white px-2 py-1 rounded" x-text="transport.sponsored ? (lang === 'en' ? 'Unsponsor' : 'স্পনসর সরান') : (lang === 'en' ? 'Sponsor' : 'স্পনসর করুন')"></button>
+                            <button @click="transports = transports.filter(t => t.id !== transport.id)" class="bg-red-600 text-white px-2 py-1 rounded" x-text="lang === 'en' ? 'Delete' : 'মুছুন'"></button>
+                        </div>
+                    </div>
+                </template>
+            </div>
+        </div>
+    </section>
+
+    <!-- Admin Login -->
+    <section id="admin" class="container mx-auto px-4 py-8" x-show="!adminLoggedIn" x-cloak>
+        <h3 class="text-2xl font-bold mb-4" x-text="lang === 'en' ? 'Admin Login' : 'প্রশাসন লগইন'"></h3>
+        <div class="bg-white dark:bg-gray-800 p-6 rounded shadow">
+            <div class="mb-4">
+                <label class="block mb-2" x-text="lang === 'en' ? 'Username' : 'ব্যবহারকারীর নাম'"></label>
+                <input type="text" class="border p-2 w-full rounded">
+            </div>
+            <div class="mb-5">
+                <label class="block mb-2" x-text="lang === 'en' ? 'Password' : 'পাসওয়ার্ড'"></label>
+                <input type="password" class="border p-2 w-full rounded">
+            </div>
+            <button @click="adminLoggedIn = true" class="bg-blue-600 text-white px-4 py-2 rounded" x-text="lang === 'en' ? 'Login' : 'লগইন'"></button>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-blue-600 dark:bg-blue-800 text-white py-8">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div>
+                    <h4 class="text-xl font-semibold mb-4" x-text="lang === 'en' ? 'About Us' : 'আমাদের সম্পর্কে'"></h4>
+                    <p x-text="lang === 'en' ? 'JD সকল পরিবহন is your one-stop hub for all transport services in Bangladesh.' : 'JD সকল পরিবহন বাংলাদেশের সকল পরিবহন সেবার জন্য একটি কেন্দ্রীয় তথ্যভাণ্ডার।'"></p>
+                </div>
+                <div>
+                    <h4 class="text-xl font-semibold mb-4" x-text="lang === 'en' ? 'Quick Links' : 'দ্রুত লিঙ্ক'"></h4>
+                    <ul>
+                        <li><a href="#" class="hover:underline" x-text="lang === 'en' ? 'Advertise With Us' : 'আমাদের সাথে বিজ্ঞাপন'"></a></li>
+                        <li><a href="#contact" class="hover:underline" x-text="lang === 'en' ? 'Contact' : 'যোগাযোগ'"></a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-xl font-semibold mb-4" x-text="lang === 'en' ? 'Follow Us' : 'আমাদের অনুসরণ করুন'"></h4>
+                    <div class="flex gap-4">
+                        <a href="#" class="text-2xl">📘</a>
+                        <a href="#" class="text-2xl">🐦</a>
+                        <a href="#" class="text-2xl">📸</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Intro Modal -->
+    <div x-show="true" x-cloak class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center" @click.self="$el.remove()">
+        <div class="bg-white dark:bg-gray-800 p-6 rounded shadow max-w-md">
+            <h3 class="text-2xl font-bold mb-4" x-text="lang === 'en' ? 'Welcome to JD সকল পরিবহন' : 'JD সকল পরিবহনে স্বাগতম'"></h3>
+            <p x-text="lang === 'en' ? 'Explore all transportation services and air ticketing platforms in Bangladesh with ease.' : 'বাংলাদেশের সকল পরিবহন সেবা এবং বিমান টিকিট প্ল্যাটফর্ম সহজে অন্বেষণ করুন।'"></p>
+            <button @click="$el.remove()" class="mt-4 bg-blue-600 text-white px-4 py-2 rounded" x-text="lang === 'en' ? 'Get Started' : 'শুরু করুন'"></button>
+        </div>
+    </div>
+</body>
+</html>
